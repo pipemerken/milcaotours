@@ -5,40 +5,47 @@
 
 body {
     font-family: "Montserrat", sans-serif;
-    margin: 0;
-    padding: 0;
     background-color: #D2E3DC;
     color: #333;
-    display: flex;
+    height: 100vh;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas:
+        "header"
+        "content"
+        "footer";
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas:
+        "sidebar header"
+        "sidebar content"
+        "sidebar footer";
     height: 100vh;
 }
 
-.container {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    height: max-content;
-}
-
 .sidebar {
+    grid-area: sidebar;
     background-color: #F9F9F9;
-    color: white;
     padding: 70px;
-    width: 170px;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
 .sidebar .logo img {
-    max-height: 80px;
+    max-width: 170px;
+    /* max-height: 80px; */
     margin-bottom: 20px;
 }
 
 .sidebar ul {
     list-style: none;
     padding: 0;
-    width: 100%;
+    /* width: 100%; */
 }
 
 .sidebar ul li {
@@ -56,53 +63,41 @@ body {
     padding: 10px;
 }
 
-
-
-
 .sidebar ul li a:hover {
-    /* background-color: #A1CE37; */
-    /* border-radius: 5px; */
-    color:#89CDBE ;
+    color: #89CDBE;
 }
 
 .content {
-    flex-grow: 1;
+    grid-area: content;
     display: flex;
     flex-direction: column;
+    padding: 20px;
 }
 
-header {
+.header {
     grid-area: header;
     display: flex;
     flex-direction: column;
     background-color: white;
+}
 
-}
-.header-bottom {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    padding: 0em;
-    gap: 3em;
-}
 .header-top {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family:"Rubik", sans-serif; 
+    font-family: "Rubik", sans-serif;
     font-size: 16px;
     padding: 1.5em;
-    background-color:#263261;
+    background-color: #263261;
     color: white;
     position: relative;
 }
 
 .contact-info {
     display: flex;
-    gap: 4em;
+    gap: 1em;
     position: absolute;
-    left: 50%;
+    left: 30%;
     transform: translateX(-50%);
 }
 
@@ -111,21 +106,17 @@ header {
     gap: 0.5em;
     color: white;
     text-decoration: none;
-    
 }
 
-
 .contact-info a:hover {
-    /* background-color: #A1CE37; */
-    /* border-radius: 5px; */
-    color:#89CDBE ;
+    color: #89CDBE;
 }
 
 .social-media {
     display: flex;
     gap: 1em;
     position: absolute;
-    right: 18em;
+    right: 4em;
     font-size: 20px;
 }
 
@@ -138,21 +129,26 @@ header {
     color: #89CDBE;
 }
 
-.logo img {
-    max-width: 170px; /* Ajusta el tamaño del logo según sea necesario */
+.header-bottom {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 0em;
+    gap: 3em;
 }
 
 .logo2 img {
-    max-width: 600px; /* Ajusta el tamaño del logo según sea necesario */
+    max-width: 184px;
 }
 
-.slogan{
-    margin-top: 0em;
+.slogan {
     text-align: center;
     font-family: "Shantell Sans", cursive;
-    font-weight: 700;
-    font-size: 50px;
+    font-weight: 800;
+    font-size: 24px;
 }
+
 .slogan span {
     color: #97C21C;
 }
@@ -167,28 +163,42 @@ section {
     margin-bottom: 40px;
 }
 
-
-#about{
-    /* background-image: url('../img/Carretera_Austral_hornopiren.jpg'); */
+#about {
     background-color: #F9F9F9;
     padding: 20px;
     border-radius: 10px;
+ 
 }
 
+#contacto, #about .about-titulo {
+    text-align: center;
+    font-family: "Montserrat", sans-serif;
+    font-size: 30px;
+    color: #333333;
+}
+
+#about .about-texto {
+    text-align: center;
+    font-size: 20px;
+    color: #444444;
+    padding-bottom: 1em;
+}
 
 .about-card {
     display: flex;
     width: 100%;
     height: 500px;
     position: relative;
-    background-image: url('../img/rosales.jpg'); /* Reemplaza con la URL de tu imagen */
+    background-image: url('../img/rosales.jpg');
     background-size: cover;
     background-position: center;
-    color: white;
+    color: #444444;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     overflow: hidden;
 }
+
 .about-text-container {
+
     position: absolute;
     right: 0;
     width: 70%;
@@ -198,64 +208,36 @@ section {
     padding: 20px;
     box-sizing: border-box;
     overflow-y: auto;
-    
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+    width: 100%; */
 }
 
-
-#contacto, #about .about-text-container p {
-    /* color: white; */
-    font-size: 15px;
-    font-weight: 600;
+.about-titulo {
+    font-family: "Shantell Sans", cursive;
+    font-size: 24px;
+    margin-bottom: 10px;
 }
 
-#about, #tours {
-    background-color: #F9F9F9;
+.about-titulo span {
+    color: #97C21C;
+}
+
+.about-texto {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+#tours {
+    background-color: #fff;
     padding: 20px;
     border-radius: 10px;
 }
-
-
-#contacto, #about .about-titulo {
-    text-align: center;
-    font-size: 30px;
-    color: #333333;
-}
-
-#contacto .about-titulo {
-    text-align: center;
-    font-size: 30px;
-    color: #333333;
-}
-
-#contacto, #about .about-titulo span {
-    color: #A1CE37;
-
-}
-#contacto,.about-titulo span {
-    color: #A1CE37;
-
-}
-#about .about-texto {
-    text-align: center;
-    font-size: 20px;
-    color: #444444;
-    padding-bottom: 1em;
-}
-#contacto .about-texto {
-    text-align: center;
-    font-size: 20px;
-    color: #444444;
-    padding-bottom: 1em;
-}
-
-
-#contacto{
-    /* background-image: url('../img/Carretera_Austral_hornopiren.jpg'); */
-    background-color: #F9F9F9;
-    padding: 20px;
-    border-radius: 10px;
-}
-
 
 #tours .tours-titulo {
     text-align: center;
@@ -263,15 +245,28 @@ section {
     color: #333333;
 }
 
-#tours .tours-titulo span {
-color: #A1CE37;
-
-}
 #tours .tours-texto {
     text-align: center;
     font-size: 20px;
     color: #444444;
 }
+
+
+.tours-titulo span {
+    color: #97C21C;
+}
+
+/* .tours-texto {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+} */
+
+/* .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 10px;
+} */
 
 .gallery {
     display: flex;
@@ -335,16 +330,13 @@ color: #A1CE37;
     padding:20px;
 }
 
-/* .contenedor {
-    padding: 20px;
-} */
 
-.contenedor h2 {
+.tours-contenedor h2 {
     margin: 0;
     font-size: 18px;
 }
 
-.contenedor p {
+.tours-contenedor p {
     margin: 10px 0 0;
     color: #555;
     font-size: 14px;
@@ -352,8 +344,7 @@ color: #A1CE37;
 
 
 
-.gallery-item {
-    flex: 1 1 calc(25% - 10px);
+/* .gallery-item {
     overflow: hidden;
     border-radius: 10px;
     transition: transform 0.3s ease;
@@ -363,7 +354,6 @@ color: #A1CE37;
     width: 100%;
     height: 230px;
     object-fit: cover;
-    display: block;
     filter: grayscale(100%);
     transition: filter 0.3s ease;
 }
@@ -374,35 +364,44 @@ color: #A1CE37;
 
 .gallery-item:hover {
     transform: scale(1.05);
-} 
+} */
 
+#contacto {
+    background-color: #F9F9F9;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+#contacto, .about-titulo {
+    font-family: "Montserrat", sans-serif;
+    text-align: center;
+    font-size: 30px;
+    color: #333333;
+}
+
+#contacto .about-texto {
+    text-align: center;
+    font-size: 20px;
+    color: #444444;
+    padding-bottom: 1em;
+}
 
 .contact-card {
-    display: flex;
+    display: grid;
     background-color: #fff;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     overflow: hidden;
-    width: 100%;
-    max-width: 100%;
-}
-
-.form-column, .info-column {
-    padding: 20px;
-    flex: 1;
+    padding: 2em 1em 1em 1em
+    /* width: 100%;
+    max-width: 100%; */
 }
 
 .form-column {
-    border-right: 1px solid #ddd;
-}
-
-.info-column {
-    background: linear-gradient(to bottom right, #4b79a1, #283e51);
-    color: white;
-}
-
-.info-column h3 {
-    margin-top: 0;
+    display: flex;
+    flex-direction: column;
 }
 
 form {
@@ -415,6 +414,7 @@ form label {
     font-weight: bold;
     font-size: 14px;
     text-align: left;
+    color: #A1CE37;
 }
 
 form input, form textarea {
@@ -422,10 +422,6 @@ form input, form textarea {
     padding: 10px;
     border: 1px solid #ddd;
     border-radius: 4px;
-}
-
-form textarea {
-    resize: vertical;
 }
 
 form button {
@@ -444,71 +440,59 @@ form button:hover {
 .info-column {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    align-content: space-around;
-    font-size: 22px;
-    justify-content: space-evenly;
-    padding-left: 2em;
 }
 
 .info-column h3 {
-    font-size: 20px;
-}
-.info-column p {
-    font-size: 22px;
-    color: #A1CE37;
+    margin-bottom: 10px;
 }
 
-.social-contacto {
-    display: flex;
-    gap: 1em;
-    /* position: absolute; */
-    right: 18em;
-    font-size: 20px;
-}
-
-
-
-.info-column a {
-    color: #A1CE37;
+.social-contacto a {
+    color: black;
     text-decoration: none;
-    font-size: 30px;
+    margin-top: 10px;;
+    margin-right: 10px;
 }
-
-.info-column a:hover {
-    text-decoration: underline;
-}
-
 
 footer {
+    grid-area: footer;
     display: flex;
     flex-direction: column;
     justify-content: center;
     height: 45px;
     width: 100%;
-    background-color:#263261;
+    background-color: #263261;
     color: white;
     text-align: center;
-    padding: 20px 0 20px;
-    padding-bottom: 20px;
+    padding: 20px 0;
+    gap: 0.5em;
 }
 
 .footer-social-media a {
     color: white;
     text-decoration: none;
-    margin: 0 10px;
+    margin: 10px 10px;
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
-    .container {
-        flex-direction: column;
+    .grid-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto 1fr auto;
+        grid-template-areas:
+            "header"
+            "sidebar"
+            "content"
+            "footer";
     }
 
     .sidebar {
-        width: 100%;
         flex-direction: row;
         justify-content: space-between;
+        padding: 10px;
+    }
+
+    .sidebar .logo img {
+        max-height: 130px;
+        margin-bottom: 0;
     }
 
     .sidebar ul {
@@ -516,22 +500,60 @@ footer {
         justify-content: space-around;
     }
 
-    .sidebar ul li {
-        margin: 0;
+    .header-bottom {
+        flex-direction: column;
     }
 
-    .sidebar ul li a {
-        padding: 10px 5px;
+    .gallery {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
     }
 
-    .gallery-item {
-        flex: 1 1 calc(50% - 10px);
+    .contact-info {
+        flex-direction: row;
+        font-size: 12px;
+        /* justify-content: center; */
+        right: 10em; 
+        /* align-items: center; */
+
+        gap: 0.5em;
+    }
+
+    .social-media {
+        
+        right: 1em;
+        font-size: 12px;
+    }
+
+    .header-top {
+        padding: 1em;
+    }
+    .content {
+        padding: 0%;
+    }
+    .card {
+        width: 100%;
     }
 }
 
 @media (max-width: 480px) {
-    .gallery-item {
-        flex: 1 1 calc(100% - 10px);
+    .gallery {
+        grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+    }
+
+    .logo2 img {
+        max-width: 200px;
+    }
+
+    .slogan {
+        font-size: 24px;
+    }
+
+    .contact-card {
+        grid-template-columns: 1fr;
+    }
+
+    .form-column {
+        border-right: none;
+        border-bottom: 1px solid #ddd;
     }
 }
-

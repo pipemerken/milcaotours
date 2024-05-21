@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,22 +13,21 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://fonts.googleapis.com/css2?family=Shantell+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="icon" href="./assets/img/favicon.png" type="image/png">
+</head>
 </head>
 <body>
-    <div class="container">
-        <nav class="sidebar">
-            <div class="logo2">
-                <img src="./assets/img/logos/logo2.png" alt="Milcao Tours Logo">
-            </div>
+    <div class="grid-container">
+        <div class="sidebar">
+            <div class="logo"><img src="./assets/img/logos/logo2.png" alt="Milcao Tours Logo"></div>
             <ul>
-                <li><a href="#tours">Tours</a></li>
                 <li><a href="#about">Sobre Nosotros</a></li>
+                <li><a href="#tours">Tours</a></li>
                 <li><a href="#contacto">Contacto</a></li>
             </ul>
-        </nav>
-
-        <div class="contenedor">
-            <header>
+        </div>
+        <div class="content">
+            <header class="header">
                 <div class="header-top">
                     <div class="contact-info">
                         <a href="tel:+56989005379"><i class="fa-solid fa-phone"></i> +56983922636</a>
@@ -40,26 +39,11 @@
                     </div>
                 </div>
                 <div class="header-bottom">
-                    <div class="logo">
-                        <img src="./assets/img/MilcaoTours-bg.png" alt="Logo de milcaotour">
-                    </div>
-                    <div class="slogan">
-                        <div class="slogan">
-                        <p>¡EL SUR DE CHILE </p>
-                        <p>EN <span>NUESTROS</span> TOURS!</p>
-                    </div>
-                    </div>
+                    <div class="logo2"><img src="./assets/img/MilcaoTours-bg.png" alt="Logo de milcaotour"></div>
+                    <div class="slogan">¡EL SUR DE CHILE EN <span>NUESTROS</span> TOURS!</div>
                 </div>
-             
             </header>
-            
             <main>
-                <!-- <section id="home">
-                    <h1>Bienvenidos a Milcao Tours</h1>
-                    <p>Descubre los mejores destinos con nosotros.</p>
-                </section> -->
-                
-
                 
                 <section id="tours">
                     <h2 class="tours-titulo">¡DESCUBRE EL SUR DE CHILE CON <span>NOSOTROS!</span></h2>
@@ -78,6 +62,13 @@
                             <p>Esta aventura te permitirá conocer el activo Volcán Osorno cuya forma asombra por su perfección y los famosos Saltos del Petrohué: ambos relevantes hitos del sur de Chile.</p>
                         </div>
                     </div>
+
+
+
+
+
+
+
 
                     <div class="card">
                         <div class="img-container">
@@ -205,8 +196,6 @@
                         Añade más imágenes según sea necesario -->
                     <!-- </div> -->
                 </section>
-
-
                 <section id="about">
                     <h2 class="about-titulo">HISTORIA DE <span>MILCAO TOURS</span></h2>
                     <p class="about-texto">Un equipo apasionado de viajeros y amantes de nuestra tierra</p>
@@ -223,57 +212,45 @@
                         </div>
                     </div>
                 </section>
-
                 <section id="contacto">
                     <h2 class="about-titulo">CONTACTO <span>MILCAO TOURS</span></h2>
                     <p class="about-texto">Por favor, complete el siguiente formulario para ponerse en contacto con nosotros.</p>
                     <div class="contact-card">
                         <div class="form-column">
                             <form>
-                                <label for="nombre">Nombre:</label>
-                                <input type="text" id="nombre" name="nombre" required>
-                
-                                <label for="apellido">Apellido:</label>
-                                <input type="text" id="apellido" name="apellido" required>
-                
+                                <label for="name">Nombre:</label>
+                                <input type="text" id="name" name="name">
                                 <label for="email">Email:</label>
-                                <input type="email" id="email" name="email" required>
-                
+           
+                                <input type="email" id="email" name="email">
                                 <label for="telefono">Teléfono:</label>
-                                <input type="tel" id="telefono" name="telefono" required>
-                
+                                <input type="tel" id="telefono" name="telefono">
                                 <label for="mensaje">Mensaje:</label>
-                                <textarea id="mensaje" name="mensaje" maxlength="1000" required></textarea>
-                
+                                <textarea id="message" name="mensaje"></textarea>
                                 <button type="submit">Enviar</button>
                             </form>
                         </div>
                         <div class="info-column">
-                            <h3>CORREO ELECTRÓNICO</h3>
-                            <p>turismolagosur@gmail.com</p>
-                            <br>
-                
-                            <h3>TELÉFONO</h3>
-                            <p>+56 9 8392 2636</p>
-                            <br>
-                            <h3>REDES SOCIALES</h3>
+                            <h3>CONTACTO</h3>
+                            <p>+56983922636</p>
+                            <p> turismolagosur@gmail.com</p>
                             <div class="social-contacto">
-                            <a href="https://web.facebook.com/milcaotour" target="_blank"><i class="fa-brands fa-facebook"></i></a>
-                            <a href="https://www.instagram.com/milcaotours/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-                        </div>
+                                <a href="https://web.facebook.com/milcaotour"><i class="fab fa-facebook-f"></i></a>
+                                <a href="https://www.instagram.com/milcaotours"><i class="fab fa-instagram"></i></a>
+                            </div>
                         </div>
                     </div>
                 </section>
             </main>
-            
             <footer>
-                <p>© 2024 Milcao Tours. Todos los derechos reservados.</p>
+                <div>© 2024 Milcao Tours. Todos los derechos reservados.</div>
                 <div class="footer-social-media">
-                    <a href="https://web.facebook.com/milcaotour">Facebook</a>
-                    <a href="https://www.instagram.com/milcaotours/">Instagram</a>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
                 </div>
             </footer>
         </div>
     </div>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </body>
 </html>
